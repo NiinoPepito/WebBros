@@ -1,19 +1,19 @@
 import Image from "next/image"
 
-const Accueil = () => {
+const Contact = () => {
     return (
-        <section id="accueil">
+        <section id={"contact"}>
             <div className="flex flex-col items-center">
-                <p className="text-lg lg:text-xl">
-                    Création de site vitrine
-                </p>
                 <h1 className="mb-4 text-4xl lg:text-4xl font-extrabold">
-                    WebBros
+                    Nous Contacter
                 </h1>
+                <p className="text-lg lg:text-xl">
+                    Formulaire de contact
+                </p>
             </div>
         </section>
 
     )
 }
 
-export default Accueil
+export default Contact
