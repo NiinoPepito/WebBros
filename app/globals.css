@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.bg_accueil {
+    background-image: url("../img/bg_accueil.jpg");
+}

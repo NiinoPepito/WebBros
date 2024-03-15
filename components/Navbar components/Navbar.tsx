@@ -1,37 +1,49 @@
 "use client";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import RouteNavbar from "@/components/Navbar components/RouteNavbar";
+import HiddenRouteNavbar from "@/components/Navbar components/HiddeRouteNavbar";
 
 const Navbar = () => {
+    //isClick
     const [isClick, setisClick] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     const toggleNavbar = () => {
         setisClick(!isClick);
     }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [isScrolled]);
     return (
         <>
-            <nav className="bg-white">
+            <nav className={` 
+                ${!isScrolled ? 'text-white' : ''} 
+                ${isScrolled ? 'fixed top-0 left-0 right-0 bg-white text-black bg-opacity-90' : ''}`}
+            >
                 <div className="mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-16">
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
-                                <a href="#" className="text-black">
+                                <a href="#top">
                                     Logo
                                 </a>
                             </div>
                         </div>
-                        <div className="hidden md:block">
-                            <div className="ml-4 flex items-center space-x-4">
-                                <a href="#" className="text-black hover:text-red-600 rounded-lg p-2">
-                                    Accueil
-                                </a>
-                                <a href="#" className="text-black hover:text-red-600 rounded-lg p-2">
-                                    À Propos
-                                </a>
-                                <a href="#" className="text-black hover:text-red-600 rounded-lg p-2">
-                                    Contact
-                                </a>
-                            </div>
-                        </div>
+                        <RouteNavbar/>
                         <div className="md:hidden flex items-center">
                             <button
                                 className="inline-flex items-center justify-center p-2 rounded-md text-black hover:text-black focus:outline-none
@@ -74,19 +86,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 {isClick && (
-                    <div className="md:hidden">
-                        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                            <a href="#" className="text-black block hover:bg-black hover:text-white rounded-lg p-2">
-                                Accueil
-                            </a>
-                            <a href="#" className="text-black block hover:bg-black hover:text-white rounded-lg p-2">
-                                À Propos
-                            </a>
-                            <a href="#" className="text-black block hover:bg-black hover:text-white rounded-lg p-2">
-                                Contact
-                            </a>
-                        </div>
-                    </div>
+                    <HiddenRouteNavbar/>
                 )}
             </nav>
         </>

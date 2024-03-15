@@ -2,17 +2,15 @@ import Image from "next/image";
 import Accueil from "@/components/Accueil";
 import AboutUs from "@/components/AboutUs";
 import Contact from "@/components/Contact";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar components/Navbar";
 
 export default function Home() {
     return (
-        <section>
+        <section id={"top"}>
             <Navbar/>
-            <div id={"top"} className="flex min-h-screen flex-col container mx-auto px-12 py-4">
-                <Accueil/>
-                <AboutUs/>
-                <Contact/>
-            </div>
+            <Accueil/>
+            <AboutUs/>
+            <Contact/>
         </section>
     );
 }

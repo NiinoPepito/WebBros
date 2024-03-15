@@ -1,8 +1,6 @@
-import Image from "next/image"
-
 const Accueil = () => {
     return (
-        <section id="accueil">
+        <section id="accueil" className={'bg_accueil'}>
             <div className="flex flex-col items-center">
                 <p className="text-lg lg:text-xl">
                     Création de site vitrine
