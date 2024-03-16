@@ -4,14 +4,14 @@ const RouteNavbar = () => {
     return (
 
         <div className="hidden md:block">
-            <div className="ml-4 flex items-center space-x-4">
-                <a href="#accueil" className="hover:text-red-600 rounded-lg p-2">
+            <div className="ml-10 flex items-center space-x-10">
+                <a href="#accueil" className="hover:text-red-600">
                     Accueil
                 </a>
-                <a href="#about" className="hover:text-red-600 rounded-lg p-2">
+                <a href="#about" className="hover:text-red-600">
                     À Propos
                 </a>
-                <a href="#contact" className="hover:text-red-600 rounded-lg p-2">
+                <a href="#contact" className="hover:text-red-600">
                     Contact
                 </a>
             </div>

@@ -39,7 +39,9 @@ const Navbar = () => {
                         <div className="flex items-center">
                             <div className="flex-shrink-0">
                                 <a href="#top">
-                                    Logo
+                                    <img
+                                        className="h-8 w-8 logo"
+                                    />
                                 </a>
                             </div>
                         </div>

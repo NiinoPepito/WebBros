@@ -1,13 +1,15 @@
+import React from "react";
+
 const Accueil = () => {
     return (
-        <section id="accueil" className={'bg_accueil'}>
+        <section id="accueil" className={'bg_accueil h-screen flex items-center justify-center'}>
             <div className="flex flex-col items-center">
                 <p className="text-lg lg:text-xl">
                     Création de site vitrine
                 </p>
-                <h1 className="mb-4 text-4xl lg:text-4xl font-extrabold">
-                    WebBros
-                </h1>
+                <img
+                    className="h-72 w-72 logo"
+                />
             </div>
         </section>
 
